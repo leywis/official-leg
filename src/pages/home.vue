@@ -1,12 +1,18 @@
 <!--  -->
 <template>
-  <div class="">首页</div>
+  <div class="home-container">
+    <!-- banner -->
+    <Banner />
+  </div>
 </template>
 
 <script>
+import Banner from "../components/banner";
 export default {
   //import引入的组件需要注入到对象中才能使用
-  components: {},
+  components: {
+    Banner,
+  },
   data() {
     //这里存放数据
     return {};
