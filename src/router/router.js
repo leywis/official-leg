@@ -15,6 +15,12 @@ const routes = [
     title: '首页',
     component: () => import('../pages/home'),
   },
+  {
+    path: '/about',
+    name: 'about',
+    title: '关于我们',
+    component: () => import('../pages/contact'),
+  },
 ]
 
 const router = new VueRouter({
