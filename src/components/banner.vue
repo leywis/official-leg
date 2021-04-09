@@ -1,25 +1,25 @@
 <template>
   <div class="banner-container">
-    <div class="banner-bg">
+    <div class="banner-bg" v-bind:style="{ backgroundImage: 'url(' + imgUrl + ')' }">
       <!-- header -->
       <div class="header-wrap">
         <strong class="logo">创世</strong>
         <ul class="header-tabs">
-          <li class="link-item active">
-            <a href="##">首页</a>
-            <p>Home</p>
+          <li class="link-item" :class="{'active': activeRouteName == 'home'}">
+            <a href="/home">首页</a>
+            <a class="p" href="/home">Home</a>
           </li>
-          <li class="link-item">
-            <a href="##">亚马逊商务</a>
-            <p>Amazon</p>
+          <li class="link-item" :class="{'active': activeRouteName == 'amazon'}">
+            <a href="/amazon">亚马逊商务</a>
+            <a class="p" href="/amazon">Amazon</a>
           </li>
-          <li class="link-item">
-            <a href="##">工商税务</a>
-            <p>Business</p>
+          <li class="link-item" :class="{'active': activeRouteName == 'business'}">
+            <a href="/business">工商税务</a>
+            <a class="p" href="/business">Business</a>
           </li>
-          <li class="link-item">
-            <a href="##">关于我们</a>
-            <p>About</p>
+          <li class="link-item" :class="{'active': activeRouteName == 'about'}">
+            <a href="/about">关于我们</a>
+            <a class="p" href="/about">About</a>
           </li>
         </ul>
       </div>
@@ -28,13 +28,11 @@
         <div class="banner-info_title">
           <div class="decorate-line dt"></div>
           <div class="decorate-line dr"></div>
-          <strong class="company-name">山西创世众创空间</strong>
+          <strong class="company-name">{{ title }}</strong>
           <div class="decorate-line db"></div>
           <div class="decorate-line dl"></div>
         </div>
-        <div class="banner-info_desc">
-          一家最具前景和影响力的，集亚马逊跨境商务和工商税务的公司
-        </div>
+        <div class="banner-info_desc">{{ tip }}</div>
       </div>
     </div>
   </div>
@@ -47,18 +45,41 @@
 export default {
   //import引入的组件需要注入到对象中才能使用
   components: {},
+  props: {
+    title: {
+      type: String,
+      default: "山西创世众创空间",
+    },
+    tip: {
+      type: String,
+      default: "一家最具前景和影响力的，集亚马逊跨境商务和工商税务的公司",
+    },
+    imgUrl: {
+      type: String,
+      default: "@assets/images/bg1.jpg",
+    },
+  },
   data() {
     //这里存放数据
-    return {}
+    return {
+      activeRouteName: "home",
+    };
   },
   //监听属性 类似于data概念
-  computed: {},
+  watch: {
+    $route: {
+      handler: function (route) {
+        this.activeRouteName = route.name;
+      },
+      immediate: true,
+    },
+  },
   methods: {},
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {},
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {},
-}
+};
 </script>
 <style lang="css" scoped>
 .banner-container {
@@ -67,7 +88,7 @@ export default {
 .banner-bg {
   width: 100%;
   height: 560px;
-  background-image: url('../assets/images/bg1.jpg');
+  background-image: url("../assets/images/bg1.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -97,9 +118,10 @@ export default {
   font-size: 16px;
   font-weight: 500;
 }
-.link-item > p {
+.link-item > .p {
   font-size: 12px;
   transform: scale(0.9);
+  display: block;
 }
 .header-tabs > .active {
   color: #f39c12;

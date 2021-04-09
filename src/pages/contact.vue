@@ -2,23 +2,19 @@
 <template>
   <div class="about-container">
     <!-- banner -->
-    <Banner />
+    <Banner :imgUrl="require('@assets/images/bg1.jpg')" />
     <!-- 亚马逊业务 -->
     <div class="main-block">
-      <div class="mian-title">亚马逊跨境电商</div>
+      <div class="mian-title">公司面貌</div>
       <div class="main-content">
         <div>
-          <strong class="main-content_tit">什么是亚马逊跨境电商？</strong>
+          <strong class="main-content_tit">公司面貌</strong>
           <div class="main-content_text">
-            <p>
-              亚马逊是一个国际性跨境电商平台，平台政策千变万化，尤其在亚马逊的销售旺季，平台政策调整更为频繁。
-            </p>
-            <p>
-              创世商务可为您提供及时的跨境电商相关新闻与动态，助力广大卖家及时了解平台政策变化、知识产权、商标权、关键词优化、运营推广等相关资讯。山西创世商务与您一起分享信息，共享财富！
-            </p>
+            <p>亚马逊是一个国际性跨境电商平台，平台政策千变万化，尤其在亚马逊的销售旺季，平台政策调整更为频繁。</p>
+            <p>创世商务可为您提供及时的跨境电商相关新闻与动态，助力广大卖家及时了解平台政策变化、知识产权、商标权、关键词优化、运营推广等相关资讯。山西创世商务与您一起分享信息，共享财富！</p>
           </div>
         </div>
-        <img class="main-pt" src="../assets/images/pt1.png" alt="" />
+        <img class="main-pt" src="../assets/images/pt1.png" alt />
       </div>
     </div>
     <!-- footer -->
@@ -27,8 +23,8 @@
 </template>
 
 <script>
-import Banner from '../components/banner'
-import Footer from '../components/footer'
+import Banner from "../components/banner";
+import Footer from "../components/footer";
 export default {
   //import引入的组件需要注入到对象中才能使用
   components: {
@@ -37,7 +33,7 @@ export default {
   },
   data() {
     //这里存放数据
-    return {}
+    return {};
   },
   //方法集合
   methods: {},
@@ -45,7 +41,7 @@ export default {
   created() {},
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {},
-}
+};
 </script>
 <style lang="css" scoped>
 .main-block {
@@ -65,14 +61,14 @@ export default {
   width: 200px;
   height: 1px;
   background: #bfbfbf;
-  content: '';
+  content: "";
   margin-right: 20px;
 }
 .mian-title::after {
   width: 200px;
   height: 1px;
   background: #bfbfbf;
-  content: '';
+  content: "";
   margin-left: 20px;
 }
 .main-content {

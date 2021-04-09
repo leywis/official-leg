@@ -2,7 +2,7 @@
 <template>
   <div class="home-container">
     <!-- banner -->
-    <Banner />
+    <Banner :imgUrl="require('@assets/images/bg1.jpg')"/>
     <!-- 亚马逊业务 -->
     <div class="main-block">
       <div class="mian-title">亚马逊跨境电商</div>
