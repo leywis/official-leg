@@ -6,20 +6,20 @@
         <strong class="logo">创世</strong>
         <ul class="header-tabs">
           <li class="link-item" :class="{'active': activeRouteName == 'home'}">
-            <a href="/home">首页</a>
-            <a class="p" href="/home">Home</a>
+            <a href="/company/index.html#/home">首页</a>
+            <a class="p" href="/company/index.html#/home">Home</a>
           </li>
           <li class="link-item" :class="{'active': activeRouteName == 'amazon'}">
-            <a href="/amazon">亚马逊商务</a>
-            <a class="p" href="/amazon">Amazon</a>
+            <a href="/company/index.html#/amazon">亚马逊商务</a>
+            <a class="p" href="/company/index.html#/amazon">Amazon</a>
           </li>
           <li class="link-item" :class="{'active': activeRouteName == 'business'}">
-            <a href="/business">工商税务</a>
-            <a class="p" href="/business">Business</a>
+            <a href="/company/index.html#/business">工商税务</a>
+            <a class="p" href="/company/index.html#/business">Business</a>
           </li>
           <li class="link-item" :class="{'active': activeRouteName == 'about'}">
-            <a href="/about">关于我们</a>
-            <a class="p" href="/about">About</a>
+            <a href="/company/index.html#/about">关于我们</a>
+            <a class="p" href="/company/index.html#/about">About</a>
           </li>
         </ul>
       </div>
